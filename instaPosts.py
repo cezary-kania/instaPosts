@@ -55,9 +55,9 @@ def downloadImages(username):
     print(username + ' photos downloaded.')
 
 if __name__ == "__main__":
-    userslist = ['astronomer_amber', 'miss_mariposita_ann', 'programm.r'] 
+    usersList = input("Enter list of usernames: ").split(',')
     threads = []
-    for user in userslist:
+    for user in usersList:
         threads.append(threading.Thread(target=downloadImages, args=(user,)))
     print('Processing...')
     for thread in threads:
